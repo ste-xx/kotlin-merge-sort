@@ -2,7 +2,7 @@ fun sort2(list: MutableList<Int>): List<Int> {
     if (list.size <= 1) {
         return list
     }
-    return msort(list, 0, list.size - 1);
+    return msort(list, 0, list.size - 1)
 }
 
 private fun msort(list: MutableList<Int>, startIdx: Int, endIdx: Int):List<Int>{
@@ -11,8 +11,8 @@ private fun msort(list: MutableList<Int>, startIdx: Int, endIdx: Int):List<Int>{
     if (endIdx - startIdx + 1 == 1) {
         return list
     }
-    val middleIdx = Math.floor((startIdx + endIdx) / 2.0).toInt();//(startIdx + endIdx)/2
-    msort(list, startIdx, middleIdx);
+    val middleIdx = Math.floor((startIdx + endIdx) / 2.0).toInt()//(startIdx + endIdx)/2
+    msort(list, startIdx, middleIdx)
     msort(list, middleIdx + 1, endIdx)
 
     val left = list.subList(startIdx, middleIdx + 1).toList()
@@ -24,8 +24,8 @@ private fun msort(list: MutableList<Int>, startIdx: Int, endIdx: Int):List<Int>{
 
 private fun merge(list: MutableList<Int>, range:IntRange, left: List<Int>, right: List<Int>) {
 
-    var i = 0;
-    var j = 0;
+    var i = 0
+    var j = 0
 
     for (k in range) {
         list[k] = when {
@@ -33,7 +33,7 @@ private fun merge(list: MutableList<Int>, range:IntRange, left: List<Int>, right
                 left[i++]
             }
             else ->{
-                right[j++];
+                right[j++]
             }
         }
     }

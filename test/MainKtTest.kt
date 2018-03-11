@@ -8,10 +8,10 @@ import java.util.*
 @RunWith(Arquillian::class)
 class MainKtTest {
 
-    private val test = IntArray(500000) { Random().nextInt(500) }.toList().toMutableList();
+    private val test = IntArray(500000) { Random().nextInt(500) }.toList().toMutableList()
 
     @Test
-    fun sortOneElement(){
+    fun sortOneElement() {
         val test = listOf(5)
         val result = sort(test)
 
@@ -20,30 +20,30 @@ class MainKtTest {
 
     @Test
     fun sortOdd() {
-        val expected = listOf(-4,0,1,4,8,9,10,11,25)
+        val expected = listOf(-4, 0, 1, 4, 8, 9, 10, 11, 25)
         val test = expected.shuffled().toMutableList()
-        println("test list: ${test}")
+        println("test list: $test")
 
         val result = sort(test)
 
-        println("result list ${result}")
+        println("result list $result")
         Assert.assertTrue(result == expected)
     }
 
     @Test
     fun sortEven() {
-        val expected = listOf(-4,0,1,2,4,8,9,10,11,25)
+        val expected = listOf(-4, 0, 1, 2, 4, 8, 9, 10, 11, 25)
         val test = expected.shuffled()
-        println("test list: ${test}")
+        println("test list: $test")
         val result = sort(test)
 
-        println("result list ${result}")
+        println("result list $result")
         Assert.assertTrue(result == expected)
     }
 
     @Test
-    fun bigList(){
-        val result = sort(test);
+    fun bigList() {
+        sort(test)
     }
 
 }
