@@ -20,23 +20,23 @@ private fun merge(left:MutableList<Int>, right:MutableList<Int>):List<Int>{
     while(left.isNotEmpty() and right.isNotEmpty()){
 
         if(left[0] <= right[0]){
-            result.add(left[0])
-            left.removeAt(0)
+            result += left[0]
+            left -= left[0]
         }else{
-            result.add(right[0])
-            right.removeAt(0)
+            result += right[0]
+            right -= right[0]
         }
     }
 
     while(left.isNotEmpty()){
-        result.add(left[0])
-        left.removeAt(0)
+        result += left[0]
+        left -= left[0]
     }
 
 
     while(right.isNotEmpty()){
-        result.add(right[0])
-        right.removeAt(0)
+        result += right[0]
+        right -= right[0]
     }
 
 
