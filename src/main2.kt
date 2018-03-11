@@ -29,12 +29,8 @@ private fun merge(list: MutableList<Int>, range:IntRange, left: List<Int>, right
 
     for (k in range) {
         list[k] = when {
-            (i <= left.size - 1) && ((j >= right.size) || (left[i] <= right[j])) -> {
-                left[i++]
-            }
-            else ->{
-                right[j++]
-            }
+            (i <= left.size - 1) && ((j >= right.size) || (left[i] <= right[j])) -> left[i++]
+            else -> right[j++]
         }
     }
 }
